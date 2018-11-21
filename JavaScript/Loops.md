@@ -20,9 +20,7 @@ Example of loops:
 
 ## The `for` loop
 
-``` 
-A `for` loop is used when we know how many times that we want the loop to run (for eg. when you have an array of a known size).
-```
+- A `for` loop is used when we know how many times that we want the loop to run (for eg. when you have an array of a known size).
 
 ### Syntax of a for loop
 
@@ -51,10 +49,8 @@ for (var i = 1; i < 100; i++) {
 ```
 
 ## The `while` loop
-
-``` 
-The `while` loop is similar to an `if` statement, except that its body will keep executing until the condition evaluates to false. Best used when we don't know how many times we need a loop to run ie. the condition is dependent on a dynamic function/return value.
-```
+ 
+- The `while` loop is similar to an `if` statement, except that its body will keep executing until the condition evaluates to false. Best used when we don't know how many times we need a loop to run ie. the condition is dependent on a dynamic function/return value.
 
 ### Syntax of a `while` loop
 
@@ -80,8 +76,6 @@ while (maybeTrue()) {
 **NB:** In this example, `maybeTrue()` returns `true` 50% of the time, and the loops runs until `maybeTure()` returns `false`.
 
 ## The `do-while` loop
-
-``` 
-The `do-while` loop is almost identical to the `while` loop except the body of the `do-while` loop is executed at least once before the condition is tested. 
-```
+ 
+- The `do-while` loop is almost identical to the `while` loop except the body of the `do-while` loop is executed at least once before the condition is tested. 
 
