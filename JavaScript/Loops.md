@@ -24,7 +24,7 @@ Example of loops:
 
 ### Syntax of a for loop
 
-```javascript
+```js
 for ([initialization]; [condition]; [iteration]) {
    [loopBody];
 }
@@ -42,7 +42,7 @@ for ([initialization]; [condition]; [iteration]) {
 
 Example Code:
 
-```javascript
+```js
 for (var i = 1; i < 100; i++) {
   console.log("Hello World the " + i + " time");
 }
@@ -54,7 +54,7 @@ for (var i = 1; i < 100; i++) {
 
 ### Syntax of a `while` loop
 
-```javascript
+```js
 while ([condition]) {
    [loopBody];
 }
@@ -62,7 +62,7 @@ while ([condition]) {
 
 Example Code:
 
-```javascript
+```js
 function maybeTrue() {
    return Math.random() >= 0.5; // retuns a random number between 0 (inclusive) and 1 (exclusive)
 }
@@ -81,7 +81,7 @@ while (maybeTrue()) {
 
 ### Syntax of a `do-while` loop
 
-```javascript
+```js
 do {
    [loopBody];
 } while ([condition]);
@@ -91,7 +91,7 @@ do {
 
 Example Code:
 
-```
+```js
 var i = 0;
 
 function incrementVariable() {
