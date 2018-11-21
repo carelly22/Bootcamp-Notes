@@ -79,3 +79,28 @@ while (maybeTrue()) {
  
 - The `do-while` loop is almost identical to the `while` loop except the body of the `do-while` loop is executed at least once before the condition is tested. 
 
+### Syntax of a `do-while` loop
+
+```javascript
+do {
+   [loopBody];
+} while ([condition]);
+```
+
+**NB:** You will not see `do-while` loops since very few situations will require a loop that blindly executes at least once.
+
+Example Code:
+
+```
+var i = 0;
+
+function incrementVariable() {
+   i = i + 1;
+}
+
+do {
+   console.log("doo-bee-doo-bee-doo");
+   incrementVariable();
+}  while (i < 5);
+```
+
