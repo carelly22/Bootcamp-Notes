@@ -22,7 +22,7 @@ Example of loops:
 
 ### Syntax of a for loop
 
-```
+```javascript
 for ([initialization]; [condition]; [iteration])
 {
     [loopBody];
@@ -38,3 +38,13 @@ for ([initialization]; [condition]; [iteration])
 3. **iteration** - this statement is executed at the end of each iteration; usually involves incrementing or decrementing a counter, bringing the loop closer to ending
 
 4. **loopBody** - code which runs on every iteration as long as the condition evaluates to true
+
+``` A `for` loop is used when we know how many times that we want the loop to run (for eg. when you have an array of a known size) ```
+
+Example Code:
+
+```javascript
+for (var i = 1; i < 100; i++){
+  console.log("Hello World the " + i + " time");
+}
+```
