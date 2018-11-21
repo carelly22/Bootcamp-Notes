@@ -20,10 +20,12 @@ Example of loops:
 
 ## The `for` loop
 
+``` A `for` loop is used when we know how many times that we want the loop to run (for eg. when you have an array of a known size) ```
+
 ### Syntax of a for loop
 
 ```javascript
-for ([initialization]; [condition]; [iteration]){
+for ([initialization]; [condition]; [iteration]) {
    [loopBody];
 }
 ```
@@ -38,8 +40,6 @@ for ([initialization]; [condition]; [iteration]){
 
 4. **loopBody** - code which runs on every iteration as long as the condition evaluates to true
 
-``` A `for` loop is used when we know how many times that we want the loop to run (for eg. when you have an array of a known size) ```
-
 Example Code:
 
 ```javascript
@@ -47,3 +47,36 @@ for (var i = 1; i < 100; i++) {
   console.log("Hello World the " + i + " time");
 }
 ```
+
+## The `while` loop
+
+``` The `while` loop is similar to an `if` statement, except that its body will keep executing until the condition evaluates to false. Best used when we don't know how many times we need a loop to run ie. the condition is dependent on a dynamic function/return value.```
+
+### Syntax of a `while` loop
+
+```javascript
+while ([condition]) {
+   [loopBody];
+}
+```
+
+Example Code:
+
+```javascript
+function maybeTrue() {
+   return Math.random() >= 0.5; // retuns a random number between 0 (inclusive) and 1 (exclusive)
+}
+
+//run until `maybeTrue()` returns `false`
+while (maybeTrue()) {
+   console.log("And I ran; I ran so far away!");
+}
+```
+
+***NB:*** In this example, `maybeTrue()` returns `true` 50% of the time, and the loops runs until `maybeTure()` returns `false`.
+
+## The `do-while` loop
+
+``` The `do-while` loop is almost identical to the `while` loop except the body of the `do-while` loop is executed at least once before the condition is tested. 
+```
+
