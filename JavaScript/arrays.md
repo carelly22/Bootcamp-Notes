@@ -30,7 +30,8 @@ JS arrays can contain all types of objects, and they can be of mixed types. You 
 * Array Literal
 
 ```js
-\\ simply list valyes in a pair of square brackets
+\\ simply list values in a pair of square brackets
+
 var myArray = [element0, element1, ..., elementN]
 var tvShows = ["game of thrones", "true blood", "empire"]
 var empty = []
@@ -40,6 +41,7 @@ var someNumbers = [1, 2, 3, 4, 5]
 * Array Constructor
 ```js
 \\ use a constructor function
+
 var evenNumbers = new Array()
 ```
 
