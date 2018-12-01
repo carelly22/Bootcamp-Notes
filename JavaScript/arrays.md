@@ -13,7 +13,7 @@
 * In JS, we can group like terms in an object called an **array**
 * An array is an **ordered list** of items (called "elements" of the array), which are separated by commas
 
-* For example:
+Code Example:
 
 ```js
 var grilledCheeseIngredients = [
@@ -24,4 +24,22 @@ var grilledCheeseIngredients = [
 ]
 ```
 
+### Creation
+
+JS arrays can contain all types of objects, and they can be of mixed types. You can create arrays in two ways:
+* Array Literal
+
+```js
+\\ simply list valyes in a pair of square brackets
+var myArray = [element0, element1, ..., elementN]
+var tvShows = ["game of thrones", "true blood", "empire"]
+var empty = []
+var someNumbers = [1, 2, 3, 4, 5]
+```
+
+* Array Constructor
+```js
+\\ use a constructor function
+var evenNumbers = new Array()
+```
 
