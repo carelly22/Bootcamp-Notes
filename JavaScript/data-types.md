@@ -1,4 +1,4 @@
-## REPL (Read-Evaluate-Print-Loop)
+# REPL (Read-Evaluate-Print-Loop)
 
 * **Read** whatever I just wrote
 * **Evaluate** it

@@ -1,6 +1,6 @@
-## Introduction to Arrays
+# Introduction to Arrays
 
-### Objectives
+## Objectives
 
 * Explain what an array is an why we use it 
 * Create an array
@@ -8,7 +8,7 @@
 * Access an element in an array
 * Delete an element in an array
 
-### Intro
+## Intro
 
 * In JS, we can group like terms in an object called an **array**
 * An array is an **ordered list** of items (called "elements" of the array), which are separated by commas
@@ -22,7 +22,7 @@ var grilledCheeseIngredients = [
 ]
 ```
 
-### Creation
+## Creation
 
 JS arrays can contain all types of objects, and they can be of mixed types. You can create arrays in two ways:
 * Array Literal
