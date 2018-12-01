@@ -40,8 +40,6 @@ for ([initialization]; [condition]; [iteration]) {
 
 4. **loopBody** - code which runs on every iteration as long as the condition evaluates to true
 
-Example Code:
-
 ```js
 for (var i = 1; i < 100; i++) {
   console.log("Hello World the " + i + " time");
@@ -59,8 +57,6 @@ while ([condition]) {
    [loopBody];
 }
 ```
-
-Example Code:
 
 ```js
 function maybeTrue() {
@@ -88,8 +84,6 @@ do {
 ```
 
 **NB:** You will not see `do-while` loops since very few situations will require a loop that blindly executes at least once.
-
-Example Code:
 
 ```js
 var i = 0;

@@ -52,15 +52,40 @@ There are two ways to access values in an Object:
 
 ### Dot Notation
 
-With dot notation, we use the **member access operator** (a single period) to access values in an Object
+With dot notation, we use the *member access operator* (a single period) to access values in an Object
 
 Code Example:
 
 ```js
 address.street1;
 // => "11 Broadway"
+
+address.city;
+// => "New York"
 ``` 
 
+Dot-notation is great for readability; you can just reference the bare key name and get your values. 
+> This should be the go-to strategy for accessing the properties of an Object.
+
+### Accessing nonexistent properties
+
+If you try to access a nonexistent property for an Object, JS will return `undefined` because there is no matching key on the Object
 
 
+```js
+address.country;
+// => undefined
+```
+
+### Bracket Notation
+
+With bracket notation, we use the *computed member access operator*; this is a pair of square brackets ([]). To access the same properties that we did in the dot notation example, we need to represent them as strings inside the oeprator.
+
+```js
+address["street"];
+// => "11 Broadway"
+
+address["zipCode"];
+// => 10004
+```
 

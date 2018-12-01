@@ -13,8 +13,6 @@
 * In JS, we can group like terms in an object called an **array**
 * An array is an **ordered list** of items (called "elements" of the array), which are separated by commas
 
-Code Example:
-
 ```js
 var grilledCheeseIngredients = [
    'bread',
