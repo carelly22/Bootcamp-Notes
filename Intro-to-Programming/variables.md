@@ -15,10 +15,14 @@ my_num = 42 # creates and assigns a value to my_num
 my_num = my_num + 8 # reassigns my_num
 puts my_num # prints out 50
 ```
-* eg. `# count += 1 # same as 'count = count + 1'`
-* eg. `# count -= 1 # same as 'count = count - 1'`
-* eg. `# count /= 1 # same as 'count = count / 1'`
-* eg. `# count *= 1 # same as 'count = count * 1'`
+
+# Shorthand operations
+```ruby
+# count += 1 # same as 'count = count + 1'
+# count -= 1 # same as 'count = count - 1'
+# count /= 1 # same as 'count = count / 1'
+# count *= 1 # same as 'count = count * 1'
+```
 
 * eg. checking if a number is even
 ```ruby
