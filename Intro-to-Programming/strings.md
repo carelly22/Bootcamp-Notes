@@ -11,9 +11,35 @@
 
 ## Get a specific character
 * Pick out a single character in a string - use its index
-* Indices for strings start at 0
 * eg. `puts "Hello"[0] #prints out H` 
 
 ## Adding strings
 * Add or concatenate strings using `+`
 * eg. `puts "Hello " + "world " + ", how are you?" # prints out Hello world, how are you?`
+
+## How are strings indexed?
+* Indices for strings start at 0
+* Last index will always be one less than the length of the string
+
+## Iterating through strings with Loops
+
+```ruby
+str = "hello"
+i = 0
+while i < str.length
+	puts str[i]
+	i += 1
+end
+```
+
+```ruby
+def printChars(str)
+	i = 0
+	while i < str.length
+		puts str[i]
+		i += 1
+	end
+end
+
+printChars("pizza")
+## 

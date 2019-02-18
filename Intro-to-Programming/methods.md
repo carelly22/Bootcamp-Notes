@@ -72,16 +72,42 @@ puts calc_average(5, 10)
 result = calc_average(5, 10)
 ```
 
+## Method and function
+
+* In general, method and function are just terms that refer to executable chunks of code
+* To be truly correct, we only use method when talking about Ruby
+
+## Variables 
+
+* Variables are names that can hold data
+* eg. `food = "toast" # this is a variable that holds the value toast`
 
 
+## Parameters
 
+* Parameters are names that can hold data in a method definition
+* Parameters are placed in parentheses following the method's name
 
+```ruby
+def meal (food, drink) # food and drink are parameters
+	sentence = "I like to eat " + food + " with a cup of " + drink
+	puts sentence
+```
 
+## Arguments
 
+* Arguments are the data vakues that we pass into a method when we call the method
 
+* We place arguments into the parentheses of a method call. Thos areguments values will be assigned to the parameters when we evaluate the method
 
+```ruby
+def meal (food, drink) # food and drink are parameters
+	sentence = "I like to eat " + food + " with a cup of " + drink
+	puts sentence
 
+meal("toast", "coffee") # Here we pass "toast" and "coffee" into our method
+meal("pancakes", "orange juice") # Here we pass "pancakes" and "orange juice" into our method
+```
 
-
-
-
+* In other words, arguments are concrete data values we pass into method calls
+* Parameters are placeholders that we use to write a general method

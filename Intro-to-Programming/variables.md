@@ -16,7 +16,7 @@ my_num = my_num + 8 # reassigns my_num
 puts my_num # prints out 50
 ```
 
-# Shorthand operations
+## Shorthand operations
 ```ruby
 # count += 1 # same as 'count = count + 1'
 # count -= 1 # same as 'count = count - 1'
