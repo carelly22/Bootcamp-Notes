@@ -100,3 +100,5 @@ end
 # cd
 # 2 3
 ```
+
+* When you get an element from your array, refer to it as a sub array - then, you can call each element of the sub array
