@@ -2,26 +2,13 @@
 # and returns a string representing their initials
 
 def to_initials(name)
-	words = name.split(" ")
+	names = name.split(" ")
+	# puts names
 	initials = ""
-	words.each do |ele1|
-		initials += ele1[0]
-	end
+	names.each { |name| initials += name[0]}
 	return initials
 end
 
 puts to_initials("Kelvin Bridges")      # => "KB"
 puts to_initials("Michaela Yamamoto")   # => "MY"
 puts to_initials("Mary La Grange")      # => "MLG"
-
-# Instructor solution
-# def to_initials(name)
-#   parts = name.split(" ")
-#   initials = ""
-#   parts.each { |part| initials += part[0] }
-#   return initials
-# end
-
-# puts to_initials("Kelvin Bridges")      # => "KB"
-# puts to_initials("Michaela Yamamoto")   # => "MY"
-# puts to_initials("Mary La Grange")      # => "MLG"
