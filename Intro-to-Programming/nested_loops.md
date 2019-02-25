@@ -12,10 +12,11 @@ end
 (1..3).each do |num1|
 	puts num
 	(1..5)..each do |num2|
-		puts "       " + num2.to_s # .to_s turns a number into a string; need to use this since you can't add a string to a number in Ruby
+		puts "       " + num2.to_s
 	end
 end
 ```
+* Note: `.to_s` turns a number into a string; for the above, you need to use this method since you can't add a string to a number in Ruby
 
 ```ruby
 (1..3).each do |num1|
