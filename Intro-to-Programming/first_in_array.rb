@@ -1,11 +1,10 @@
-# write a method that takes in an array and two elements
-# it should return the element that appears earlier in the array
-
 def first_in_array(arr, el1, el2)
-	if (arr.index(el1) < arr.index(el2))
-		return el1
-	else 
-		return el2
+	idx1 = arr.index(el1)
+	idx2 = arr.index(idx2)
+	if idx1 < idx2 
+		return idx1
+	else
+		return idx2
 	end
 end
 

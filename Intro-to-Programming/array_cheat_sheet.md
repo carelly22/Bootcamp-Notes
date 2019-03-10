@@ -75,3 +75,32 @@ print words.join("-") # prints "Rubies-are-red"
 print words.join("HI") # prints "RubiesHIareHIred"
 print words # prints ["Rubies", "are", "red"]
 ```
+
+### Checking existence of characters
+
+* If you are checking for the existence of a character (in a certain position) of a string, a quick way to do this is to split the string at that character 
+
+```ruby
+email = abc@xyz.com 
+email.split("@") # splits the string on the @ symbol; this will result in an array with two elements
+```
+
+### Tips and tricks
+
+* Selecting multiple elements at the same time
+
+```ruby
+def array_translate(array)
+	new_str = ""
+
+	i = 0
+	while i < array.length
+		ele = array[i] # grab the first element
+		num = array[i+1] # grab the second element
+		new_str += ele * num # this works because ruby converts num to an integer
+		num.times { new_str += ele}
+
+		i += 2
+	end
+end
+```

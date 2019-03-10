@@ -20,6 +20,8 @@ arr = ["vanessa", "candace", "dave"]
 puts
 print arr.push("jia") # evaluates to ["vanessa", "candace", "dave", "jia"]
 puts
+print arr.push("carell", "andrew") # evaluates to ["vanessa", "candace", "dave", "jia", "carell", "andrew"]
+puts
 ```
 
 ## array.pop 
@@ -68,7 +70,7 @@ puts
 ```ruby
 arr = ["SF", "NY", "LA"]
 puts arr.index("NY") # evaluates to 1
-puts arr.index("NJ") # while not evaluate to anything since NJ is not in arr
+puts arr.index("NJ") # will not evaluate to anything since NJ is not in arr
 ```
 
 ```ruby
