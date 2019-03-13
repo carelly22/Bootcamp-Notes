@@ -9,7 +9,7 @@ count = {
 }
 
 str.each_char do |char| 
-	puts count
+	puts count 
 	if (char == "a" || char == "e")
 
 		count[char] += 1
