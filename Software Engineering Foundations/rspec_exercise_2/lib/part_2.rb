@@ -42,7 +42,7 @@ puts
 print substrings("abc") #  ["a", "ab", "abc", "b", "bc", "c"]
 puts
 print substrings("x") # ["x"]
-
+puts
 
 def palindrome_substrings(str)
     substrings = substrings(str)
@@ -60,3 +60,4 @@ puts
 print palindrome_substrings("madam") #  ["madam", "ada"]
 puts
 print palindrome_substrings("taco") # []
+puts
