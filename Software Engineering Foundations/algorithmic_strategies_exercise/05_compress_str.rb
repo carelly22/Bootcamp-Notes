@@ -3,26 +3,30 @@
 # For example "aaabbc" is compressed to "3a2bc".
 
 def compress_str(str)
-	collapsible = true
+	compressed = ""
+	num = 0
 
-	while collapsible
-		collapsible = false
-
-		chars = str.split("")
-		chars.each.with_index do |char, i|
-			if chars[i] == chars[i+1]
-				chars[i] = i+1
-				chars[i+1] = chars[i]
-				collapsible = true
-				break
+	str.each_char.with_index do |char, i|
+		if str[i] == str[i + 1]
+			num += 1
+		else
+			if num < 1
+				compressed += char
+				num = 0
+			elsif num >= 1
+				compressed += (num+1).to_s + char
+				num = 0		
 			end
 		end
-		str = chars.join("")
 	end
-	return str
+	
+	return compressed
 end
 
 p compress_str("aaabbc")        # => "3a2bc"
-# p compress_str("xxyyyyzz")      # => "2x4y2z"
-# p compress_str("qqqqq")         # => "5q"
-# p compress_str("mississippi")   # => "mi2si2si2pi"
+p compress_str("xxyyyyzz")      # => "2x4y2z"
+p compress_str("qqqqq")         # => "5q"
+p compress_str("mississippi")   # => "mi2si2si2pi"
+
+# problem steps 
+# create a 
