@@ -89,3 +89,96 @@ address["zipCode"];
 // => 10004
 ```
 
+NB: Bracket notation is a bit harder to read that dot notation, so people usually default to the latter. 
+
+However, there are two situations where you **should** use bracket notation:
+* With nonstandard keys
+* Accessing properties dynamically
+
+### Bracket notation with nonstandard keys
+
+If you need to use a nonstandard string as the key in an Object, you will only be able to access the properties using bracket notation.
+
+```js
+const wildKeys = {
+	"Cash rules everything around me.": "Wu",
+	"C.R.E.A.M.": "Tang",
+	"Get the money.": "For",
+	"$ $ bill, y'all!": "Ever"
+};
+```
+
+It is not possible to access the above properties using dot noation:
+
+```js
+wildKeys."Cash rules everything around me.";
+// ERROR: Uncaught SyntaxError: Unexpected string
+```
+
+But bracket notation will work:
+
+```js
+wildkeys["$ $ bill, y'all!"];
+// => "Ever"
+```
+
+**NB**: In order to access a property via dot notation, **the key must follow the same naming rules applied to variables and functions**. Important to note that under the hood, **all keys are strings**.
+
+Rules for naming keys:
+
+* camelCaseEverything
+* start the key with a lowercase letter
+* no spaces or punctuation
+
+**Tip**: Keeping to the above rules will keep everything standardized, and being able to access properties via dot notation is more readable than having to default to bracket notation.
+
+### Accessing properties dynamically
+
+You can place any expression inside the brackets and JS will compute its value in order to figure out which property it needs to access
+
+Example:
+
+```js
+address["zip" + "Code"];
+// => 10004
+```
+
+Example #2:
+
+```js
+const meals = {
+	breakfast: "Oatmeal",
+	lunch: "Caesar salad",
+	dinner: "Turkey sandwich"
+}
+```
+
+```js
+let mealName = "lunch";
+
+meals[mealName];
+// => "Caesar salad"
+```
+
+However, if you try to use the `mealName` variable with dot notation, it will not work. This is because dot notation doesn't treat `mealName` as a variable; it checks whether a property exists with a key of `mealName` (and only finds `breakfast`, `lunch`, and `dinner`) and thus returns `undefined`.
+
+Dot notation is for when you know the **exact name of the property** beforehand; bracket notation is for when you need to compute it when the program runs
+
+## Add a property to an Object
+
+To add properties to an object use:
+* dot notation
+* bracket notation
+
+```js
+const circle = {};
+
+circle.radius = 5;
+
+circle["diameter"] = 10;
+
+circle.circumference = circle.diameter * Math.PI;
+// => 31.415926
+
+circle["area"] = Math.PI * circle.radius ** 2;
+// => 78.53981

@@ -17,6 +17,12 @@
   - JS variables and function names are written using camel case - the first letter of the first word is lowercase, the first letters of subsequent words are written in uppercase; no punctuation or spaces between words
   - **Example** : `var pizzaTopping = "pepperoni";`
 
+## Data types in JS
+
+* A data type in JS can contain any data
+* It can at one moment be a string and then be a number (ie. while there are data types, variables are not bound to any of them)
+* Because JS allows the above behaviour, it is a dynamically typed language
+
 ## Primitive Data Types in JS
 
 * Numbers
@@ -27,7 +33,7 @@
 
 ## Numbers 
 
-* The number data type includes any positive or negative integer, as well as decimals - so numbers are just represented by their digits
+* The number data type includes any positive or negative integer, as well as decimals (floats) - so numbers are just represented by their digits
 * Entering a number into the console will return it right back to you
 
 ## Arithmetic Operations
@@ -41,10 +47,16 @@
 
 **NB:** The modulo operator comes in handy if we are checking if a number is even. Simply write `Number % 2` and if the result is 0, the number is even; if not, then the number is odd.
 
+## Special Numeric Values
+
+* Special numeric values are: `Infinity`, `-Infinity`, and `NaN`
+
 ## NaN ("Not a number")
 
-* **NaN** is the return value from operations which have an undefined numerical result eg. dividing 0 by 0, multiplying strings together
+* **NaN** is the return value from operations which have an undefined numerical result ie. it represents a computational error 
+* eg. dividing 0 by 0, multiplying strings together
 * You can test whether a value is a valid number by using the `isNaN()` function eg. `isNaN(5);` will return false since 5 is a valid number
+* `NaN` is sticky ie. any further operations on `NaN` will return `NaN`
 
 ## Comparing Numbers
 
@@ -70,10 +82,15 @@ Operator | Meaning|
 ## Strings
 
 * One of the primitive data types of JS
-* **Strings** are a collection os characters enclosed in either single or double quotes
+* **Strings** are a collection of characters enclosed in either single or double quotes
 * Strings are how JS represents text
 * **Examples:** `'Hello World!'`, `"Hello World!"`, `'h'`, and `''`
 * It is correct to use either double `"` or single `'` quotes with strings, as long as you're consistent
+
+## Types of quotes
+
+* There are single and double quotes which are "simple" quotes
+* Backticks ie. ``Hello`` are extended functionality quotes. They allow us to embed variables and expressions into a string by wrapping them in `${...}`
 
 ## String concatenation
 
@@ -132,5 +149,16 @@ var budding = greetings.slice(9,15);
 
 * If we declare a variable without assigning a value to it, it will by default, have a value of `undefined`
 * Null is similar to `undefined` but we have to explicitly assign it to a variable
-* `Undefined` implies nothing because it never was anything, while `null` implies explicitly set to nothing
+* `Undefined` implies nothing because it never was anything ie. it means that a "value was never assigned", while `null` implies explicitly set to nothing
+* If a value is declared but is never assigned, the value of it is `undefined`
+
+## Typeof operator
+
+* The `typeof` operator returns the type of the argument
+* Useful when processing values of different types differently or when you want to do a quick check
+* Supports two forms of syntax: 
+	- As an operator: `typeof x`
+	- As a function: `typeof(x)`
+
+ 
 
