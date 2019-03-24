@@ -62,3 +62,54 @@ def my_none?(array, &prc)
     true 
 end
 
+def reverser(string, &prc)
+    prc.call(string.reverse)
+end 
+
+def word_changer()
+    words = sentence.split(" ")
+    new_words = []
+
+    words.each do |word|
+        new_words << prc.call(word)
+    end 
+    
+    new_words.join(" ")
+end 
+
+def greater_proc_value(prc_1, prc_2)
+    result_1 = prc_1.call(num)
+    result_2 = prc_2.call(num)
+
+    if result_1 > result_2
+        return result_1
+    else
+        return result_2
+    end  
+end 
+
+def and_selector(array, prc_1, prc_2)
+    selected = []
+
+    array.each do |ele|
+        if prc_1.call(ele) && prc_2.call(ele)
+            selected << el
+        end
+    end 
+
+    selected 
+end 
+
+def alternating_mapper(array, prc_1, prc_2)
+    mapped = []
+    
+    array.each_with_index do |ele, idx|
+        if idx.even? 
+            mapped << prc_1.call(ele)
+        else
+            mapped << prc_2.call(ele)
+        end 
+    end 
+
+    mapped
+end 
