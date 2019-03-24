@@ -54,3 +54,11 @@ def no_valid_url?(urls)
         valid_endings.any? { |ending| url.end_width?(ending) }
     end
 end
+
+def any_passing_students?(students)
+    students.any? do |student|
+        grades = students[:grades]
+        grades.sum / (grades.length * 1.0)
+        avg >= 75
+    end
+end
