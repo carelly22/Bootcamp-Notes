@@ -20,10 +20,11 @@ class Startup
     end 
 
     def hire(employee_name, title)
-        if !(self.valid_title?(title))
+        if self.valid_title?(title)
+            @employees << Employee.new(employee_name, title)
+        else 
             raise "This is not a valid title!"
         end
-        @employees << Employee.new(employee_name, title) if self.valid_title?(title)
     end 
     
     def size
@@ -44,7 +45,7 @@ class Startup
     end 
 
     def payday
-        @employees.each { |employee| pay_employee(employee) }
+        @employees.each { |employee| self.pay_employee(employee) }
     end 
 
     def average_salary
@@ -76,6 +77,6 @@ class Startup
         startup.employees.each { |employee| @employees << employee }
         
         # close the acquired startup
-        startup.close
+        startup.close(startup)
     end 
 end
