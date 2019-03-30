@@ -62,15 +62,22 @@ class Startup
     end 
 
     def acquire(startup)
+        # add funding 
         # self.funding is a getter in our code
         # in order to change funding, we need to reference 
         # @funding directly 
         @funding += startup.funding 
         
+        # merge salaries together 
         startup.salaries.each do |title, salary|
             if !@salaries.has_key?(title)
                 @salaries[title] = amount
             end 
-        end 
-    end 
+        end
+        
+        # hire the other employees 
+        @employees += startup.employees
+
+        # 
+    end    
 end

@@ -1,7 +1,7 @@
 class Employee
     # automatically create getter methods for name and title
     attr_reader :name, :title
-    # initialize our instance variables
+    # set our instance variables
    
     def initialize(name, title)
         @name = name
@@ -12,5 +12,5 @@ class Employee
     def pay(amount)
         @earnings += amount
     end 
-    
+
 end
