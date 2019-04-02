@@ -70,12 +70,12 @@ class Board
    
   def self.print_grid(main_array)
     main_array.each do |subarray|
-        puts subarray.flatten.join(" ")
+        puts subarray.join(" ")
     end 
   end
   
   def cheat
-    Board.print_grid(self.grid)
+    Board.print_grid(@grid)
   end 
 
   def print
