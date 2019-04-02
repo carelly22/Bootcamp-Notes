@@ -23,8 +23,18 @@
 # creates an array containing 4 distinct subarrays, with elements = nil
 
 class Board
+    attr_reader :size
     def initialize(n)
         @grid = Array.new(n) { Array.new(n, :N) }
         @size = n * n # this is the true size of the array
     end
+
+    def [](position)
+        # we want to return the element of the grid at the given position
+        # position is a pair of indices 
+        # we know that position is an array of two elements 
+        # the first element will become the row variable, and the second 
+        # element will become the column variable
+        row, col = position 
+    end 
 end
