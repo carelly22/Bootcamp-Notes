@@ -36,5 +36,25 @@ class Board
         # the first element will become the row variable, and the second 
         # element will become the column variable
         row, col = position 
+        @grid[row][col]
     end 
+
+    def []=(position, val)
+        row, col = position
+        @grid[row][col] = value
+    end 
+
+    def num_ships
+        # we just want to iterate through our grid and 
+        # count the number of :S (S symbols) 
+        # what makes this a bit awkawrd is that we have a 2D grid 
+        # we can turn the 2D array into a 1D array 
+        @grid.flatten.count { |ele| ele == :S }
+        # .count is an array method 
+        # you can pass in a block of code
+        # when the block returns true, then it's going to 
+        # increment like a hidden count 
+        # at the end it will return the total count 
+        # .coount only works on 1D arrays
+    end     
 end
