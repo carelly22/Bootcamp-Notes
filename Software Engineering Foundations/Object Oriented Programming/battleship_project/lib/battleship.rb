@@ -35,7 +35,7 @@ class Battleship
     end 
 
     def game_over?
-        if lose? || win?
+        if self.lose? || self.win?
             return true
         else 
             return false
@@ -48,9 +48,9 @@ class Battleship
         @board.print
         if attacked == false
             @remaining_misses -= 1
-            puts @remaining_misses
+            puts "Remaining Misses: #{@remaining_misses}" 
         else 
-            @remaining_misses
+            "Remaining Misses: #{@remaining_misses}"
         end 
     end 
 end
