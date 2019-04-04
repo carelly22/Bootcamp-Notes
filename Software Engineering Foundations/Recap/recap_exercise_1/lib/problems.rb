@@ -64,20 +64,21 @@ end
 # find_bigrams("the theater is empty", ["cy", "em", "ty", "ea", "oo"])  # => ["em", "ty", "ea"]
 # find_bigrams("to the moon and back", ["ck", "oo", "ha", "at"])        # => ["ck", "oo"]
 def find_bigrams(str, bigrams)
-    found = []
-    words = str.split(" ")
+    # found = []
+    # words = str.split(" ")
 
-    words.each do |word|
-        (0...(word.length-1)).each do |i|
-            if bigrams.include?(word[i] + word[i+1])     
-                found << (word[i] + word[i+1])  
-            end  
-        end 
-    end 
+    # words.each do |word|
+    #     (0...(word.length-1)).each do |i|
+    #         if bigrams.include?(word[i] + word[i+1])     
+    #             found << (word[i] + word[i+1])  
+    #         end  
+    #     end 
+    # end 
 
-    sorted = found.sort_by { |chars| bigrams.index(chars) } 
+    # sorted = found.sort_by { |chars| bigrams.index(chars) } 
 
-    sorted 
+    # sorted 
+    bigrams.select { |bigram| str.include?(bigram)}
 end
 
 p find_bigrams("the theater is empty", ["cy", "em", "ty", "ea", "oo"]) # => ["em", "ty", "ea"]
@@ -121,23 +122,23 @@ class String
     # "cats".substrings(2)  # => ["ca", "at", "ts"]
 
     def substrings(length = nil)
-        substrings = []
+        subs = []
         len = self.length 
 
         self.each_char.with_index do |char, idx|
             i = 0
             while i < len
                 if idx <= i
-                    substrings << self[idx..i]
+                    subs << self[idx..i]
                 end 
                 i += 1
             end 
             
         end 
         if length == nil
-            return substrings
+            subs
         else 
-            substrings.select { |substr| substr.length == length} 
+            subs.select { |str| str.length == length} 
         end 
     end 
 
