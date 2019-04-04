@@ -99,7 +99,7 @@ class Hash
     def my_select(&prc)
         new_hash = {}
         prc ||= Proc.new { |k,v| k == v}
-        self.each { |k,v| new_hash[k] = v if prc.call(k,v) == true}
+        self.each { |k,v| new_hash[k] = v if prc.call(k,v)}
         new_hash
     end
 end
