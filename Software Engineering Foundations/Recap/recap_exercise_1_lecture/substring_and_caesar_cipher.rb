@@ -39,6 +39,12 @@ class String
         new_str = ""
         alphabet = ("a".."z").to_a # quick way to set up an alphabet array
 
-
+        self.each_char do |char|
+            start_pos = alphabet.index(char)
+            new_pos = (start_pos + num) % 26
+            new_str += alphabet[new_pos]
+        end
+        
+        new_str
     end
 end
