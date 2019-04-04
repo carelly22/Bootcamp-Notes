@@ -14,16 +14,22 @@ def all_vowel_pairs(words)
 
     words.each_with_index do |word1, idx1|
         words.each_with_index do |word2, idx2|
-            vowels.each do |char|
-                if (word1 + word2).include?(char) && idx2 > idx1
-                    count += 1
-                end
-            end
-            if count == 5
-                contains = word1 + " " + word2
-                all_vowels << contains
-            end
-            count = 0
+            # vowels.each do |char|
+            #     if (word1 + word2).include?(char) && idx2 > idx1
+            #         count += 1
+            #     end
+            # end
+            # if count == 5
+            #     contains = word1 + " " + word2
+            #     all_vowels << contains
+            # end
+            # count = 0
+            pair = word1 + " " + word2
+            
+            if idx2 > idx1 && vowels.all? { |char| pair.include?(char) }
+                all_vowels << pair
+            end 
+            
         end 
     end
 

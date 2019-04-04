@@ -54,7 +54,17 @@ end
 class Array
     # Write a method, Array#pair_sum_count, that takes in a target number returns the number of pairs of elements that sum to the given target
     def pair_sum_count(num)
-
+        count = 0
+        self.each_with_index do |ele1, idx1|
+            self.each_with_index do |ele2, idx2|
+                if idx2 > idx1
+                    if ele1 + ele2 == num
+                        count += 1
+                    end 
+                end 
+            end 
+        end
+        count  
     end
 
 
@@ -62,6 +72,20 @@ class Array
     # When given a proc, the method should sort the array according to the proc.
     # When no proc is given, the method should sort the array in increasing order.
     def bubble_sort(&prc)
+        prc ||= Proc.new { |a,b| a <=> b }
+        sorted = false
 
-    end
+        while !sorted
+            sorted = true # reset the sorted flag to true 
+            # the each below performs a single pass of bubble sort 
+            (0...self.length - 1).each do |i|
+                if prc.call(self[i], self[i + 1]) == 1
+                    self[i], self[i + 1] = self[i + 1], self[i]
+                    sorted = false 
+                end 
+            end 
+        end
+        
+        self
+    end 
 end
