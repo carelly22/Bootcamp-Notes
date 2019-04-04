@@ -11,8 +11,11 @@ def most_frequent_bigram(str)
     end
 
     # sort_by is a method to sort the hash
-    # returns a sorted array of keys and values
+    # returns a sorted array with subarrays
+    # of keys and values
 
     sorted = counts.sort_by { |k,v| v} 
+
+    # the very last sub-array has the maximal value
     sorted.last[0] 
 end 

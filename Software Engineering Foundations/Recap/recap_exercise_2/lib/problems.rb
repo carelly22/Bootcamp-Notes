@@ -57,11 +57,7 @@ class Array
         count = 0
         self.each_with_index do |ele1, idx1|
             self.each_with_index do |ele2, idx2|
-                if idx2 > idx1
-                    if ele1 + ele2 == num
-                        count += 1
-                    end 
-                end 
+                count += 1 if (idx2 <=> idx1) == 1 && (ele1 + ele2 == num)
             end 
         end
         count  
