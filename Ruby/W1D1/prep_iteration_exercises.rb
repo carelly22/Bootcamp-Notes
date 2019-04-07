@@ -1,9 +1,15 @@
+# prep_iteration_exercises.rb
 # ### Factors
 #
 # Write a method `factors(num)` that returns an array containing all the
 # factors of a given number.
 
 def factors(num)
+  factors = []
+  (1..num).each do |factor|
+    factors << factor if num % factor == 0
+  end 
+  factors 
 end
 
 # ### Bubble Sort
@@ -47,9 +53,22 @@ end
 
 class Array
   def bubble_sort!(&prc)
+    sorted = false 
+    while !sorted
+      sorted = true
+      (0..self.length-1).each do |i|
+        if prc.call(self[i], self[i+1]) == 1
+          self[i],self[i+1] = self[i+1], self[i]
+          sorted = false
+        end 
+      end
+      
+    end
+    self  
   end
 
   def bubble_sort(&prc)
+    return self.dup.bubble_sort!(&prc)
   end
 end
 
@@ -67,9 +86,22 @@ end
 # words).
 
 def substrings(string)
+  substrings = []
+  string.each_char.with_index do |ele1, first|
+    string.each_char.with_index do |ele2, last|
+      substr = string[first..last]
+        if last >= first && !(substrings.include?(substr))
+          substrings << substr
+        end 
+    end
+  end 
+  substrings
 end
 
 def subwords(word, dictionary)
+  words = substrings(word)
+  filtered = words.select { |word| dictionary.include?(word) }
+  filtered
 end
 
 # ### Doubler
@@ -77,6 +109,7 @@ end
 # array with the original elements multiplied by two.
 
 def doubler(array)
+  return array.map { |ele| ele * 2 }  
 end
 
 # ### My Each
@@ -104,6 +137,10 @@ end
 
 class Array
   def my_each(&prc)
+    self.length.times do |i|
+      prc.call(self[i])
+    end
+    self 
   end
 end
 
@@ -122,9 +159,15 @@ end
 
 class Array
   def my_map(&prc)
+    mapped = []
+    self.my_each { |ele| mapped << prc.call(ele) }
+    mapped  
   end
 
   def my_select(&prc)
+    selected = []
+    self.my_each { |ele| selected << ele if prc.call(ele) }
+    selected
   end
 
   def my_inject(&blk)
@@ -141,4 +184,6 @@ end
 # ```
 
 def concatenate(strings)
+  new = strings.inject { |final, str| final + str }
+  new 
 end
