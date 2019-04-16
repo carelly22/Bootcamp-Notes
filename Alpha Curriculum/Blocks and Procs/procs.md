@@ -51,7 +51,7 @@ my_new_proc.call("Zimmy") # prints "Hello Zimmy"
 
 ## Passing multiple Procs
 
-The `&` way only allows you to pass a single block/proc tp a method. If you want to pass multiple procs, you must pass them as normal arguments:
+The `&` way only allows you to pass a single block/proc to a method. If you want to pass multiple procs, you must pass them as normal arguments:
 
 ```ruby
 def chain_blocks (start_val, proc1, proc2, &proc3)
