@@ -1,28 +1,47 @@
-# load "dictionary.txt"
-# require_relative "./dictionary.txt"
 require "set"
 
-s = Set[]
-File.foreach( "dictionary.txt" ) do |line|
-  s << line.chomp
-end
-
-def Ghost
-    dictionary = Set[]
-    File.foreach( "dictionary.txt" ) do |line|
-        dictionary << line.chomp
-    end
+class Ghost
     
-    def initialize(players, fragment)
-        @dictionary = dictionary
+    attr_accessor :players, :fragment, :dictionary
+    
+    def initialize(*players)
         @players = players
-        @fragment = fragment 
+        @fragment = "" 
     end 
 
     def dictionary
-        @dictionary ||= dictionary
+        @dictionary ||= Set.new(File.readlines("test_dictionary.txt").map { |word| word.chomp } )
+    end
+    
+    def play_round
+    end 
+
+    def current_player
+    end 
+
+    def previous_player
+    end 
+
+    def next_player!
+    end
+    
+    def take_turn(player)
+    end
+    
+    def valid_play?(string)
+        alphabet = ["a".."z"].to_a
+        new_fragment = fragment + string
+        if alphabet.include?(string) && !(dictionary.include?(new_fragment))
+            return true
+        else 
+            return false
+        end 
     end 
 end 
 
-# puts s
-# puts s.include?("net")
+
+ghost1 = Ghost.new(3)
+p ghost1
+p ghost1.dictionary
+p ghost1
+p ghost1.dictionary.include?("aardvark")
