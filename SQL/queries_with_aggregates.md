@@ -56,3 +56,39 @@ SELECT Building, SUM(Years_employed)
 FROM employees
 GROUP BY Building;
 ```
+
+How do we filter grouped rows if the GROUP BY clause is executed after the WHERE clause. Recall that the WHERE clause filters the rows which are to be grouped. 
+
+SQL allows us to solve the above conundrum by adding an additional HAVING clause which is used specifically with the GROUP BY clause. It allows us to filter grouped rows from the result set. 
+
+```sql
+/*SELECT query with HAVING function*/
+
+SELECT group_by_column, AGG_FUNC(column_expression) AS aggregate_result_alias, ...
+FROM mytable
+WHERE condition
+GROUP BY column
+HAVING group_condition;
+```
+
+The HAVING clause constraints are written the same way as the WHERE clause constraints, and are applied by grouped rows. 
+
+This functionality is useful when you need have data with millions of rows with different properties, and you need to quickly make sense of the data.
+
+**Note:** If you aren't using the GROUP BY clause, a simple WHERE clause will suffice. 
+
+Exercise:
+
+```sql
+SELECT COUNT(Role) 
+FROM employees
+WHERE Role = "Artist";
+
+SELECT Role, COUNT(Role)  
+FROM employees
+GROUP BY Role;
+
+SELECT Role, SUM(Years_employed) AS Total_num_years_employed
+FROM employees
+WHERE Role = "Engineer";
+```
